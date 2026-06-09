@@ -55,19 +55,3 @@ bars only — no external data, no future information.
 
 The tradeable set is the **top ~1000 US names by liquidity**, frozen at round open. The exact frozen
 list is in [`universe.json`](universe.json); anything outside it is silently ignored.
-
-## Scoring (summary)
-
-1. **Admission** — runs across 3 hidden 30-day regimes; admitted if no constraint breach, no >50%
-   drawdown, and no fatal error.
-2. **Round 1 — live forward test (June 2 – July 2, 2026)** — ranked by **Calmar** (annualized return ÷
-   max drawdown) on the shared paper sandbox.
-3. **Held-out rerun** — top finishers re-run on fresh, unseen windows to confirm skill over luck.
-
-Full rules & FAQ: https://builderr.ai/guidelines
-
-## Submission
-
-Implement `decide()` in `agent.py` → push to GitHub (public, or private with a read-only deploy key) →
-email the repo URL to **submit@builderr.ai**. Endpoint mode (host `POST /decide`) is also supported.
-This template is MIT; the repository and its IP remain yours.
